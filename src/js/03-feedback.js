@@ -6,6 +6,8 @@ const emailInput = form.querySelector('input[name="email"]');
 const messageInput = form.querySelector('textarea[name="message"]');
 const storageKey = "feedback-form-state";
 
+
+
 // Функція для збереження стану форми в локальному сховищі
 function saveFormState() {
   const state = {
@@ -13,6 +15,7 @@ function saveFormState() {
     message: messageInput.value,
   };
   localStorage.setItem(storageKey, JSON.stringify(state));
+  
 }
 
 // Функція для завантаження збереженого стану форми під час завантаження сторінки
@@ -33,6 +36,7 @@ function handleSubmit(event) {
     email: emailInput.value,
     message: messageInput.value,
   });
+  form.reset();
 }
 
 // Додамо обробники подій
